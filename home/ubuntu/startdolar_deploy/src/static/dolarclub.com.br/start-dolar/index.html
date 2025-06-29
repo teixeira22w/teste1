@@ -1,4 +1,120 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Legendas Lucrativas - Navbar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-legenda: #22e56a;
+      --amarelo-legenda: #95970d;
+      --laranja-legenda: #c28310;
+      --vermelho-legenda: #e00707;
+      --verde-botao: #b6ff3b;
+    }
+    body {
+      background: #140303;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar-bg {
+      background: #000;
+      width: 100%;
+      margin: 0;
+      border: none;
+      border-bottom: 2px solid var(--verde-botao);
+      box-sizing: border-box;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+      max-width: 1720px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+    }
+    .navbar-logo {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 900;
+      font-size: 1.32rem;
+      letter-spacing: 0.07em;
+      user-select: none;
+      margin: 0;
+      line-height: 1;
+      height: auto;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-logo-text {
+      /* Gradiente linear editável entre as cores */
+      background: linear-gradient(90deg, 
+        var(--verde-legenda) 0%, 
+        var(--amarelo-legenda) 40%, 
+        var(--laranja-legenda) 65%, 
+        var(--vermelho-legenda) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 2px 8px #0008);
+      display: inline-block;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      height: 100%;
+    }
+    .navbar-links a {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 1.01rem;
+      color: var(--verde-botao);
+      text-decoration: none;
+      transition: color 0.18s;
+      letter-spacing: 0.2px;
+      padding: 0;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    .navbar-links a:hover {
+      color: #e32b41;
+    }
+    @media (max-width: 900px) {
+      .navbar { padding: 0 12px; height: 54px;}
+      .navbar-logo { font-size: 1.02rem; }
+      .navbar-links { gap: 13px; }
+      .navbar-links a { font-size: 0.93rem; }
+    }
+    @media (max-width: 600px) {
+      .navbar { height: 46px; }
+      .navbar-logo { font-size: 0.91rem; }
+      .navbar-links a { font-size: 0.82rem; }
+      .navbar-links { gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar-bg">
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <span class="navbar-logo-text">LEGENDAS LUCRATIVAS</span>
+      </div>
+      <div class="navbar-links">
+        <a href="#metodo">Método</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#ajuda">Ajuda</a>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>
 <html lang="pt-BR">
 
 <!-- Mirrored from dolarclub.com.br/start-dolar/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 Jun 2025 02:40:36 GMT -->
@@ -141,34 +257,135 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<div  class="e-con-inner">
 		<div class="elementor-element elementor-element-07125da e-con-full e-flex e-con e-child" data-id="07125da" data-element_type="container">
 				
-<!-- 
-<div style="background: transparent; padding: 20px 20px 5px 20px; text-align: center; margin: 0;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h 
-        </h1>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Legendas Lucrativas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Edite essas variáveis para ajustar o gradiente */
+      --cor-verde: #87ff38;     /* Verde vivo */
+      --cor-limao: #63ad0e;    /* Amarelo limão */
+      --cor-laranja: #fd0808;  /* Laranja suave */
+      --cor-vermelho: #ac1313; /* Vermelho vivo */
+    }
 
-<!-- Novo texto adicionado -->
-<div style="background: transparent; padding: 5px 20px; text-align: left; margin: 0;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h1 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; line-height: 1.2;">
-            <span style="color: white;">Transforme </span>
-            <span style="color: #ff0000;">Vídeos Gringos</span>
-            <span style="color: white;"> em Dólar</span><br>
-            <span style="color: white;">Usando Apenas Seu Celular</span><br>
-            <span style="color: #ff0000;">(Sem Inglês e Sem Aparecer)</span>
-        </h1>
-        
-        <p style="font-size: 1.1rem; line-height: 1.4; margin-bottom: 8px; color: #cccccc;">
-            Com o Método <span style="color: white;">"Legenda Lucrativa"</span>, você aprende de forma simples e rápida como <span style="color: white;">faturar legendando vídeos com Inteligência Artificial</span>.
-        </p>
-        
-        <p style="font-size: 1.0rem; line-height: 1.4; margin-bottom: 5px; color: #cccccc;">
-            Mesmo que <span style="color: white;">nunca tenha vendido nada online</span> ou editado vídeos... <span style="color: white;">Em até 15 dias</span>, você já pode conquistar suas primeiras comissões internacionais!
-        </p>
+    body {
+      background: #141414;
+      margin: 0;
+      color: #fff;
+      font-family: 'Poppins', Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .container-legendas {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 80px 0 0 0;
+    }
+    .degrade-legendas {
+      font-size: 3.2rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 900;
+      background: linear-gradient(
+        90deg,
+        var(--cor-verde) 0%,
+        var(--cor-limao) 35%,
+        var(--cor-laranja) 65%,
+        var(--cor-vermelho) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      margin-top: 0;
+      line-height: 1.08;
+      filter: drop-shadow(0 2px 2px #0008);
+      text-align: left;
+      margin-left: 4px;
+      transition: background 0.2s;
+    }
+    .frase-principal {
+      font-size: 1.18rem;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 700;
+      margin-bottom: 10px;
+      margin-top: 0;
+      line-height: 1.19;
+      color: white;
+      text-align: left;
+      margin-left: 4px;
+    }
+    .frase-principal .vermelho {
+      color: #ff2626;
+      font-weight: 700;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+    .frase-principal .destaque {
+      color: #ff2626;
+      font-weight: 700;
+      font-family: 'Poppins', Arial, sans-serif;
+      display: block;
+      margin-top: 8px;
+      font-size: 1.18rem;
+      text-shadow: 1px 1px 4px #000a;
+    }
+    .frases-abaixo {
+      background: transparent;
+      padding: 0 0 0 0;
+      text-align: left;
+      margin: 0 auto;
+      max-width: 800px;
+      margin-top: -2px;
+    }
+    .frases-abaixo p {
+      font-size: 1.01rem;
+      line-height: 1.45;
+      margin-bottom: 10px;
+      color: #cccccc;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 400;
+      margin-left: 4px;
+    }
+    .frases-abaixo span {
+      color: white;
+      font-weight: 600;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+    @media (max-width: 600px) {
+      .container-legendas { padding-top: 28px; }
+      .degrade-legendas { font-size: 1.4rem; }
+      .frase-principal { font-size: 0.95rem; }
+      .frase-principal .destaque { font-size: 0.95rem; }
+      .frases-abaixo p { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container-legendas">
+    <div class="degrade-legendas">
+      LEGENDAS<br>LUCRATIVAS
     </div>
-</div>
+    <h1 class="frase-principal">
+      Transforme <span class="vermelho">Vídeos Gringos</span> em Dólar<br>
+      Usando Apenas Seu Celular<br>
+      <span class="destaque">(Sem Inglês e Sem Aparecer)</span>
+    </h1>
+    <div class="frases-abaixo">
+      <p>
+        Com o Método <span>"Legenda Lucrativa"</span>, você aprende de forma simples e rápida como <span>faturar legendando vídeos com Inteligência Artificial</span>.
+      </p>
+      <p>
+        Mesmo que <span>nunca tenha vendido nada online</span> ou editado vídeos... <span>Em até 15 dias</span>, você já pode conquistar suas primeiras comissões internacionais!
+      </p>
+    </div>
+  </div>
+</body>
+</html>
 
 				<div class="elementor-element elementor-element-742ee20 elementor-mobile-align-justify elementor-widget-mobile__width-inherit elementor-widget__width-initial elementor-align-justify elementor-invisible elementor-widget elementor-widget-button" data-id="742ee20" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
