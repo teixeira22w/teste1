@@ -100,16 +100,254 @@
   </style>
 </head>
 <body>
-  <div class="navbar-bg">
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <span class="navbar-logo-text">LEGENDAS LUCRATIVAS</span>
-      </div>
-      <div class="navbar-links">
-        <a href="#metodo">Método</a>
-        <a href="#resultados">Resultados</a>
-        <a href="#oferta">Oferta</a>
-        <a href="#ajuda">Ajuda</a>
+ <div class="navbar-bg">
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <span class="navbar-logo-text">LEGENDAS LUCRATIVAS</span>
+    </div>
+    <button class="navbar-hamburguer" aria-label="Abrir menu" id="hamburguer-btn" onclick="toggleNavbarMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="navbar-links" id="navbar-links">
+      <a href="#metodo">Método</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#ajuda">Ajuda</a>
+    </div>
+  </nav>
+</div>
+
+<style>
+:root {
+  --menu-btn-color: #b6ff3b;
+  --menu-btn-color-dark: #e4ffb2;
+}
+.navbar-bg {
+  background: #000;
+  width: 100%;
+  border-bottom: 2px solid var(--menu-btn-color);
+  box-shadow: 0 2px 12px #0007;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+}
+
+.navbar-logo {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 1.32rem;
+  letter-spacing: 0.07em;
+  user-select: none;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-text {
+  background: linear-gradient(90deg, #22e56a 0%, #95970d 40%, #c28310 65%, #e00707 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 8px #0008);
+  display: inline-block;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  height: 100%;
+  transition: none;
+}
+
+.navbar-links a {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.01rem;
+  color: var(--menu-btn-color);
+  background: none;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 7px 16px;
+  border-radius: 6px;
+}
+
+.navbar-links a:hover,
+.navbar-links a:focus {
+  color: #fff;
+  background: #181818;
+  box-shadow: 0 2px 10px #0006;
+}
+
+.navbar-hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1200;
+  margin-left: 16px;
+  padding: 0;
+  outline: none;
+  transition: background 0.2s;
+}
+.navbar-hamburguer:focus {
+  outline: none;
+  background: #000;
+}
+.navbar-hamburguer span {
+  display: block;
+  height: 3px;
+  width: 20px;
+  background: linear-gradient(90deg, #22e56a 0%, #95970d 40%, #c28310 65%, #e00707 100%);
+  border-radius: 2px;
+  transition: 0.35s cubic-bezier(.25,1.7,.68,1.09);
+  position: relative;
+}
+/* Animação hamburguer para X */
+.navbar-hamburguer.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-hamburguer.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.navbar-hamburguer.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* RESPONSIVO MOBILE */
+@media (max-width: 900px) {
+  .navbar { padding: 0 12px; height: 54px;}
+  .navbar-logo { font-size: 1.02rem; }
+  .navbar-links { gap: 13px; }
+  .navbar-links a { font-size: 0.93rem; }
+}
+@media (max-width: 600px) {
+  .navbar { height: 46px; }
+  .navbar-logo { font-size: 0.91rem; }
+  .navbar-links {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    display: flex !important;
+    padding: 0;
+    position: absolute;
+    top: 110%;
+    right: 7px;
+    min-width: 67vw;
+    max-width: 290px;
+    background: transparent;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 14px 32px #0007, 0 2px 10px #22e56a33;
+    overflow: visible;
+    z-index: 1100;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-30px) scaleY(0.98);
+    transition: opacity 0.35s, transform 0.44s cubic-bezier(.23,1.02,.51,.99);
+  }
+  .navbar-links.menu-open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0) scaleY(1);
+    background: none;
+  }
+  .navbar-links a {
+    color: var(--menu-btn-color);
+    background: #181818;
+    font-size: 1.01rem;
+    font-weight: 700;
+    border-bottom: 1px solid #262626;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 14px 22px;
+    margin: 0;
+    width: 100%;
+    display: block;
+    text-align: left;
+    height: auto;
+    opacity: 0;
+    transform: translateY(-12px);
+    animation: none;
+    transition: background 0.23s, color 0.2s, opacity 0.4s, transform 0.4s;
+  }
+  .navbar-links.menu-open a {
+    animation: linkFadeIn 0.47s forwards;
+  }
+  .navbar-links.menu-open a:nth-child(1) { animation-delay: 0.07s;}
+  .navbar-links.menu-open a:nth-child(2) { animation-delay: 0.15s;}
+  .navbar-links.menu-open a:nth-child(3) { animation-delay: 0.22s;}
+  .navbar-links.menu-open a:nth-child(4) { animation-delay: 0.29s;}
+  .navbar-links a:last-child {
+    border-bottom: none;
+  }
+  .navbar-links a:hover,
+  .navbar-links a:focus {
+    background: #222;
+    color: #fff;
+  }
+  .navbar-hamburguer {
+    display: flex;
+  }
+  @keyframes linkFadeIn {
+    0% { opacity: 0; transform: translateY(-12px);}
+    100% { opacity: 1; transform: translateY(0);}
+  }
+}
+</style>
+
+<script>
+function toggleNavbarMenu() {
+  var menu = document.getElementById('navbar-links');
+  var hamb = document.getElementById('hamburguer-btn');
+  menu.classList.toggle('menu-open');
+  hamb.classList.toggle('active');
+  // Reinicia animação dos links
+  if(menu.classList.contains('menu-open')) {
+    var links = Array.from(menu.querySelectorAll('a'));
+    links.forEach(function(link) {
+      link.style.animation = 'none';
+      link.offsetHeight;
+      link.style.animation = '';
+    });
+  }
+  // Fecha menu ao clicar em algum link
+  if(menu.classList.contains('menu-open')) {
+    Array.from(menu.querySelectorAll('a')).forEach(link => {
+      link.onclick = () => {
+        menu.classList.remove('menu-open');
+        hamb.classList.remove('active');
+      }
+    });
+  }
+}
+</script>
       </div>
     </nav>
   </div>
@@ -235,7 +473,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="header-topo">
   <div class="logo-legendas">
     <span class="legendas-l1">LEGENDA</span><br>
-    <span class="legendas-l2">LUCRATIVAS</span>
+    <span class="legendas-l1">LUCRATIVAS</span>
   </div>
   <nav class="menu-topo">
     <a href="#metodo">Método</a>
@@ -245,7 +483,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </nav>
 </div>
 <div class="linha-neon"></div>
-
 <style>
 @media (max-width: 600px) {
   .header-topo {
